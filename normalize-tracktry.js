@@ -66,9 +66,7 @@ function printMap(map) {
 }
 
 function adaptTime(item,t) {
-	if (item.courier_code === "postnl-3s") {
-		if (t && !t.includes("-", 11) && !t.includes("+", 11) ) {t = t.trim()+"+0700"}; // adjust time at postnl-3s if no TZ given
-	}
+	if (t && !t.includes("-", 11) && !t.includes("+", 11) ) {t = t.trim()+"+0700"}; // adjust time at postnl-3s if no TZ given
 	return t // no adjustments known for other couriers
 }
 
