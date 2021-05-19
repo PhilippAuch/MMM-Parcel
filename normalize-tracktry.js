@@ -67,9 +67,11 @@ function printMap(map) {
 }
 
 function adaptTime(item,t) {
-	if (item.courier_code !== "hermes-de" || item.courier_code !== "hermes") {
+	console.log('enter adaptTime', item, t);
+	if (item.courier_code !== "hermes-de" && item.courier_code !== "hermes") {
 		if (t && !t.includes("-", 11) && !t.includes("+", 11) ) {t = t.trim()+"+0800"}; // adjust time if no TZ given
 	}
+	console.log('exit adaptTime', item, t);
 	return t // no adjustments known for other couriers
 }
 
